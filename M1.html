@@ -1328,9 +1328,9 @@
           strokeDashoffset: [anime.setDashoffset, 0],
           easing: 'easeInOutSine',
           duration: 1500,
-          begin: function () {
+          begin: function (a) {
             $("#m1-con-7-footer-content").animate({
-              "opacity": 1,
+              opacity: 1,
             }, 2000, "linear");
           }
         });
@@ -1437,6 +1437,7 @@
       var m1Sec2Counter = 0;
       var m1Sec3OffsetTop = $("#m1-sec-3").offset().top;
       var m1Sec6OffsetTop = $("#m1-sec-6").offset().top;
+      var m1Sec6Counter = 0;
       var m1Sec7OffsetTop = $("#m1-sec-7").offset().top;
       var m1Sec7Counter = 0;
       var m1Sec8OffsetTop = $("#m1-sec-8").offset().top;
@@ -1526,15 +1527,15 @@
             m1Con2Anime();
           }
         }
-        if (currentWindowScrollTop < (m1Sec6OffsetTop - 350) && currentWindowScrollTop > m1Sec6OffsetTop) {
-          m1Sec6Counter = 0;
-          m1Con6AnimeInitial(m1Con6ObjArray);
-        } else if (currentWindowScrollTop > (m1Sec6OffsetTop - 350) && currentWindowScrollTop < m1Sec6OffsetTop) {
-          if (m1Sec6Counter == 0) {
-            m1Sec6Counter += 1;
-            m1Con6Anime();
-          }
-        }
+        // if (currentWindowScrollTop < (m1Sec6OffsetTop - 350) && currentWindowScrollTop > m1Sec6OffsetTop) {
+        //   m1Sec6Counter = 0;
+        //   m1Con6AnimeInitial(m1Con6ObjArray);
+        // } else if (currentWindowScrollTop > (m1Sec6OffsetTop - 350) && currentWindowScrollTop < m1Sec6OffsetTop) {
+        //   if (m1Sec6Counter == 0) {
+        //     m1Sec6Counter += 1;
+        //     m1Con6Anime();
+        //   }
+        // }
         if (currentWindowScrollTop < (m1Sec7OffsetTop + 350) && currentWindowScrollTop > m1Sec6OffsetTop) {
           m1Sec7Counter = 0;
           m1Con7AnimeInitial(m1Con7ObjArray);
