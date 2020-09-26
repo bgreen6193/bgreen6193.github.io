@@ -1328,11 +1328,12 @@
           strokeDashoffset: [anime.setDashoffset, 0],
           easing: 'easeInOutSine',
           duration: 1500,
-          begin: function (a) {
-            $("#m1-con-7-footer-content").animate({
-              opacity: 1,
-            }, 2000, "linear");
-          }
+        })
+        .add({
+          targets: ["#m1-con-7-footer-content"],
+          opacity: 1,
+          easing: "easeInExpo",
+          duration: 1000,
         });
     }
 
