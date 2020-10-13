@@ -58,20 +58,21 @@
   transition: all 0.5s ease-in-out;
 }
 
+.vibrationM1 {
+  animation: m1Anime 0.25s ease infinite;
+}
+
 html, body {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   height: 100%;
   overflow: hidden;
 }
 html::-webkit-scrollbar, body::-webkit-scrollbar {
   width: 0px;
   background: transparent;
-}
-
-main, footer {
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 #m1-con-1 .header-top {
@@ -120,13 +121,13 @@ main, footer {
 #m1-con-1 .footer .footer-title {
   text-align: center;
   margin: 0;
-  font-size: 2.5vmin;
+  font-size: 0.8rem;
 }
 #m1-con-1 .footer .footer-subtitle {
   display: flex;
   text-align: center;
-  margin: 0 auto;
-  font-size: 2.5vmin;
+  margin: 0;
+  font-size: 0.8rem;
 }
 #m1-con-1 .footer .furniture-logo {
   display: flex;
@@ -147,7 +148,7 @@ main, footer {
   opacity: 0;
 }
 #m1-con-2 .bgImg-wrap {
-  background-image: none, url("../images/jpg/background_phone.jpg");
+  background-image: none, url("/images/jpg/background_phone.jpg");
   background-repeat: no-repeat;
   background-color: #ffffff;
   background-position: center;
@@ -171,6 +172,72 @@ main, footer {
   letter-spacing: 0.1rem;
   font-size: 0.9rem;
 }
+#m1-con-2 #leafScene {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 1s ease-in;
+}
+#m1-con-2 #leafScene > .leaves {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#m1-con-2 #leafScene > .leaves > div {
+  position: absolute;
+}
+#m1-con-2 #leafScene > .leafBlur {
+  transform: scale(2);
+  filter: blur(1px);
+}
+#m1-con-2 #leafScene img {
+  width: 75px;
+  height: 75px;
+}
+#m1-con-2 #leafScene > .leaves > div:nth-child(1) {
+  left: 29%;
+  animation: leafAnime 10s linear infinite;
+  animation-delay: -1s;
+}
+#m1-con-2 #leafScene > .leaves > div:nth-child(2) {
+  left: 14%;
+  animation: leafAnime 10s linear infinite;
+  animation-delay: -4s;
+}
+#m1-con-2 #leafScene > .leaves > div:nth-child(3) {
+  left: 67%;
+  animation: leafAnime 10s linear infinite;
+  animation-delay: -2s;
+}
+#m1-con-2 #leafScene > .leaves > div:nth-child(4) {
+  left: 54%;
+  animation: leafAnime 10s linear infinite;
+  animation-delay: -7s;
+}
+#m1-con-2 #leafScene > .leaves > div:nth-child(5) {
+  left: 7%;
+  animation: leafAnime 10s linear infinite;
+  animation-delay: -3s;
+}
+#m1-con-2 #leafScene > .leaves > div:nth-child(6) {
+  left: 90%;
+  animation: leafAnime 10s linear infinite;
+  animation-delay: -6s;
+}
+#m1-con-2 #leafScene > .leaves > div:nth-child(7) {
+  left: 78%;
+  animation: leafAnime 10s linear infinite;
+  animation-delay: -1s;
+}
+#m1-con-2 #leafScene > .leaves > div:nth-child(8) {
+  left: 83%;
+  animation: leafAnime 10s linear infinite;
+}
 
 #m1-con-3 .maples-wrap {
   width: 90%;
@@ -192,7 +259,7 @@ main, footer {
 }
 
 #m1-con-4 .bgImg-wrap {
-  background-image: linear-gradient(white, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url("../images/jpg/M1_P4_BK_S.jpg");
+  background-image: linear-gradient(white, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url("/images/jpg/M1_P4_BK_S.jpg");
   background-repeat: no-repeat;
   background-color: #ffffff;
   background-position: center;
@@ -234,15 +301,37 @@ main, footer {
 }
 #m1-con-5 .humanAndM1 {
   width: auto;
-  height: 600px;
+  height: 400px;
+  animation: m1Anime 0.25s ease infinite;
+}
+#m1-con-5 .ex-1-content-1, #m1-con-5 .ex-2-content-1 {
+  left: 20%;
+}
+#m1-con-5 .ex-1-content-2, #m1-con-5 .ex-2-content-2 {
+  padding: 0 0 0 20%;
 }
 #m1-con-5 .footer-title {
   font-size: 1.5rem;
+}
+#m1-con-5 .waterCupSize {
+  width: 100px;
+  height: auto;
 }
 #m1-con-5 h4 {
   font-size: 6vmin;
   letter-spacing: 6px;
   padding: 5% 0 0 5%;
+}
+#m1-con-5 .swiper-container {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#m1-con-5 .swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: auto;
 }
 
 #m1-con-6 .y-maple {
@@ -251,7 +340,7 @@ main, footer {
   transform: translateX(-70%);
 }
 #m1-con-6 .header-wrap {
-  margin: 0 0 25% 0;
+  margin: 0 0 5% 0;
 }
 #m1-con-6 h4 {
   font-size: 6vmin;
@@ -259,6 +348,9 @@ main, footer {
 }
 #m1-con-6 h4 span {
   color: #C97B2E;
+}
+#m1-con-6 th {
+  font-weight: 400;
 }
 
 #m1-sec-6 .leafSize {
@@ -347,6 +439,27 @@ main, footer {
 #m1-con-9 .svg-photo-size {
   width: 300px;
   height: auto;
+  animation: m1Anime 0.25s ease infinite;
+}
+#m1-con-9 .topHintSvg {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#m1-con-9 .bottomHintSvg {
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#m1-con-9 #m1-con-9-breath-1 {
+  top: 55%;
+  left: 50%;
+  transform: translateX(125%);
+}
+#m1-con-9 #m1-con-9-breath-2 {
+  top: 40%;
+  left: 50%;
+  transform: translateX(155%);
 }
 #m1-con-9 h4 {
   font-size: 6vmin;
@@ -434,6 +547,9 @@ main, footer {
   font-size: 6vmin;
   letter-spacing: 2px;
 }
+#m1-con-11 #m1-con-11-m1 {
+  animation: m1Anime 0.25s ease infinite;
+}
 
 #m1-con-12-1 .bgImg-wrap {
   background-color: #D29144;
@@ -450,7 +566,7 @@ main, footer {
   font-size: 2.75vmin;
 }
 #m1-con-12-1 .backCoverLogo-wrap {
-  margin: 30% 0 30% 0;
+  margin: 150px 0 100px 0;
 }
 #m1-con-12-1 .backCoverLogo {
   width: 150px;
@@ -461,7 +577,7 @@ main, footer {
   letter-spacing: 1px;
 }
 #m1-con-12-1 .backCoverSubTitle {
-  font-size: 4vmin;
+  font-size: 1.1rem;
   letter-spacing: 1px;
 }
 
@@ -562,7 +678,7 @@ main, footer {
     top: 75px;
     left: -8.5vmin;
     text-align: center;
-    font-size: 2.2vmin;
+    font-size: 1.15rem;
   }
   #m1-con-1 .footer .footer-subtitle {
     display: flex;
@@ -571,7 +687,7 @@ main, footer {
     left: -10px;
     margin: 0 auto;
     text-align: center;
-    font-size: 2.4vmin;
+    font-size: 1.15rem;
   }
   #m1-con-1 .footer .furniture-logo {
     display: flex;
@@ -590,7 +706,7 @@ main, footer {
     opacity: 0;
   }
   #m1-con-2 .bgImg-wrap {
-    background-image: none, url("../images/jpg/background.jpg");
+    background-image: none, url("/images/jpg/background.jpg");
     background-repeat: no-repeat;
     background-color: #ffffff;
     background-position: center;
@@ -614,6 +730,10 @@ main, footer {
   #m1-con-2 .bgImg-wrap p {
     letter-spacing: 0.25rem;
     font-size: 1.2rem;
+  }
+  #m1-con-2 #leafScene img {
+    width: 150px;
+    height: 150px;
   }
 
   #m1-con-3 .maples-wrap {
@@ -652,7 +772,7 @@ main, footer {
   }
 
   #m1-con-4 .bgImg-wrap {
-    background-image: linear-gradient(white, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url("../images/jpg/M1_P4_BK_S.jpg");
+    background-image: linear-gradient(white, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url("/images/jpg/M1_P4_BK_S.jpg");
     background-repeat: "round";
     background-color: #ffffff;
     background-position: center;
@@ -684,6 +804,10 @@ main, footer {
   }
   #m1-con-5 .footer-title {
     font-size: 2rem;
+  }
+  #m1-con-5 .waterCupSize {
+    width: 150px;
+    height: auto;
   }
 
   #m1-con-6 .y-maple {
@@ -857,8 +981,8 @@ main, footer {
     margin: 15% 0;
   }
   #m1-con-12-1 .backCoverLogo {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
   }
   #m1-con-12-1 .backCoverTitle {
     letter-spacing: 3px;
@@ -879,9 +1003,10 @@ main, footer {
   }
 }
 @media screen and (min-width: 992px) {
-  #m1-con-10 .content-wrap {
-    bottom: -29%;
-    left: 28%;
+  main {
+    width: 768px;
+    height: auto;
+    margin: auto;
   }
 }
 @keyframes goldenMapleLogoAnime {
@@ -893,6 +1018,48 @@ main, footer {
   }
   100% {
     filter: drop-shadow(0px 0px 5px #ffffff);
+  }
+}
+@keyframes leafAnime {
+  0% {
+    opacity: 0;
+    top: -10%;
+    transform: translateX(-10px) rotateZ(0deg);
+  }
+  10% {
+    opacity: 1;
+    transform: translateX(10px) rotateZ(90deg);
+  }
+  20% {
+    opacity: 0.8;
+    transform: translateX(-10px) rotateZ(134deg);
+  }
+  40% {
+    opacity: 0.6;
+    transform: translateX(10px) rotateZ(165deg);
+  }
+  60% {
+    opacity: 0;
+    transform: translateX(-10px) rotateZ(270deg);
+  }
+  80% {
+    transform: translateX(10px) rotateZ(315deg);
+  }
+  100% {
+    opacity: 0;
+    top: 110%;
+    transform: translateX(10px) rotateZ(345deg);
+  }
+}
+@keyframes m1Anime {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 
