@@ -148,7 +148,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   opacity: 0;
 }
 #m1-con-2 .bgImg-wrap {
-  background-image: none, url("/images/jpg/background_phone.jpg");
+  background-image: none, url("../images/jpg/background_phone.jpg");
   background-repeat: no-repeat;
   background-color: #ffffff;
   background-position: center;
@@ -259,7 +259,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 }
 
 #m1-con-4 .bgImg-wrap {
-  background-image: linear-gradient(white, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url("/images/jpg/M1_P4_BK_S.jpg");
+  background-image: linear-gradient(white, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url("../images/jpg/M1_P4_BK_S.jpg");
   background-repeat: no-repeat;
   background-color: #ffffff;
   background-position: center;
@@ -706,7 +706,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     opacity: 0;
   }
   #m1-con-2 .bgImg-wrap {
-    background-image: none, url("/images/jpg/background.jpg");
+    background-image: none, url("../images/jpg/background.jpg");
     background-repeat: no-repeat;
     background-color: #ffffff;
     background-position: center;
@@ -772,7 +772,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   }
 
   #m1-con-4 .bgImg-wrap {
-    background-image: linear-gradient(white, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url("/images/jpg/M1_P4_BK_S.jpg");
+    background-image: linear-gradient(white, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)), url("../images/jpg/M1_P4_BK_S.jpg");
     background-repeat: "round";
     background-color: #ffffff;
     background-position: center;
