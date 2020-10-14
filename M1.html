@@ -563,23 +563,6 @@
     </section>
     <hr>
     <section id="m1-sec-6" class="position-relative">
-      <!-- <div class="container-fluid p-0 position-absolute overflow-hidden">
-        <div>
-          <?xml version="1.0" encoding="utf-8"?>
-          <svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            x="0px" y="0px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
-            <path id="Path_211" d="M0,8 H 12 L 15,4 H 20 L 24,0" stroke="#C97B2E" stroke-width="0.05" fill="none" />
-            <img id="m1-con-6-leaf-1" class="position-absolute leafSize leaf-1" src="/assets/images/svg/M1_24px_楓葉黃綠.svg"
-              alt="">
-            <img id="m1-con-6-leaf-2" class="position-absolute leafSize leaf-2" src="/assets/images/svg/M1_24px_楓葉紅綠.svg"
-              alt="">
-            <img id="m1-con-6-leaf-3" class="position-absolute leafSize leaf-3" src="/assets/images/svg/M1_24px_楓葉02.svg"
-              alt="">
-            <img id="m1-con-6-leaf-4" class="position-absolute leafSize leaf-4" src="/assets/images/svg/M1_24px_楓葉01.svg"
-              alt="">
-          </svg>
-        </div>
-      </div> -->
       <div id="m1-con-6" class="container overflow-hidden">
         <div class="row header-wrap">
           <div class="col p-3">
@@ -1488,9 +1471,12 @@
           easing: 'easeInOutSine',
           duration: 1500,
           begin: function (a) {
-            $("#m1-con-7-footer-content").animate({
+            anime({
+              targets: "#m1-con-7-footer-content",
               opacity: 1,
-            }, 2000, "linear");
+              duration: 2000,
+              easing: "linear"
+            });
           }
         });
     }
