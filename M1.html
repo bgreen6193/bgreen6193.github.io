@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant-TW">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -9,17 +9,17 @@
   <meta name="keywords" content="楓葉 bgreen 運動家具 家具 明根股份有限公司 明根"/>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <link rel="stylesheet" href="/assets/stylesheets/m1Style.css">
   <meta property="og:url" content="https://bgreen6193.github.io/M1.html"/>
   <meta property="og:type" content="website"/>
-  <meta property="og:title" content="Bgreen uFit 沐意森活律動儀 M1"/>
+  <meta property="og:title" content="Bgreen uFit 沐意森活全身垂直律動儀 M1"/>
   <meta property="og:description" content="bgreen創立於2006年，「由愛而生擁抱健康，開啟健康的每一天」，是創辦人一直奉行的理念，bgreen的使命在於「創造設計一個充滿『愛』與『健康』居家生活空間，守護全家人一輩子的健康」，我們相信幸福的理想生活可以有更簡單實踐的方式。 "/>
-  <meta property="og:image" content="https://raw.githubusercontent.com/bgreen6193/bgreen6193.github.io/master/assets/"/>
-  <title>Bgreen uFit 沐意森活律動儀 M1</title>
+  <meta property="og:image" content="https://raw.githubusercontent.com/bgreen6193/bgreen6193.github.io/master/assets/images/png/M1_1024px_%E6%AD%A3%E9%9D%A2%E6%A9%9F%E5%8F%B0.png"/>
+  <title>Bgreen uFit 沐意森活全身垂直律動儀 M1</title>
 </head>
 <body>
   <div id="loader" class="d-flex position-fixed loader">
@@ -856,7 +856,7 @@
           <div class="col-6">
             <div id="m1-con-8-2-motionWrap-1">
               <img class="img-fluid photoStyle" src="/assets/images/png/IMG_0216a.png" alt="">
-              <p><strong>全身運動</strong></p>
+              <p><strong>提臀運動</strong></p>
             </div>
           </div>
           <div class="col-6">
@@ -1259,27 +1259,19 @@
       </div>
     </section>
   </main>
-
   <footer>
     <div class="container">
       <div class="row my-3">
         <div class="col text-center p-0">
           <div>
-            <p>Copyright ©
-              <script>document.write(new Date().getFullYear());</script> <a
-                href="https://www.bgreen.com.tw/index.aspx?lang=TW"><span>Bgreen</span></a> All Rights Reserved.</p>
+            <p>Copyright © <span id="copyright"></span> <a href="https://www.bgreen.com.tw/index.aspx?lang=TW"><span>Bgreen</span></a> All Rights Reserved.</p>
           </div>
         </div>
       </div>
     </div>
   </footer>
-
-
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
     crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
@@ -1287,8 +1279,7 @@
   <script src="/assets/javascript/animejs/lib/anime.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script>
-    // utils
+  <script defer>
     function add_utils(target, animeName) {
       if ((typeof (target).toLowerCase() || typeof (animeName).toLowerCase()) != "string") {
         throw console.error("params type must be string.");
@@ -1301,15 +1292,12 @@
       }
       $(target).removeClass(animeName);
     }
-    // anime func
     function m1Con1Anime(anime1) {
-      // animation settings
       const m1Con1 = anime.timeline({
         loop: false,
       });
       const vibrationM1 = anime1;
       const m1Con1MaplesArray = ["#m1-con-1-y-maple", "#m1-con-1-l-maple", "#m1-con-1-r-maple"];
-      // add obj
       m1Con1
         .add({
           targets: m1Con1MaplesArray,
@@ -1436,7 +1424,6 @@
         });
       }
     }
-    // 第六頁先不要做，有難度
     function m1Con6Anime(m1Con6ObjArray) {
       var m1Con6 = anime.timeline({
         loop: true,
@@ -1630,7 +1617,8 @@
     }
     $(document).ready(function () {
       // global var
-      var deviceAgent = navigator.userAgent.toLowerCase();
+      const thisYear = new Date().getFullYear();
+      const deviceAgent = navigator.userAgent.toLowerCase();
       var m1Con1ObjArray = [
         "#bgreen-logo",
         "#m1-con-1-footer",
@@ -1714,9 +1702,7 @@
           }
         }
       });
-      // initial AOS
       AOS.init();
-      // initial Swiper
       var swiper = new Swiper('.swiper-container', {
         speed: 1500,
         effect: 'coverflow',
@@ -1736,17 +1722,14 @@
           waitForTransition: true,
         },
       });
-      // initial css
       for (let i in m1Con1ObjArray) {
         $(m1Con1ObjArray[i]).css({
           "opacity": 0,
         });
       }
       m1Con2AnimeInitial(m1Con2ObjArray);
-      // initial anime
       m1Con9SvgTopAnime();
       m1Con9SvgBottomAnime();
-      // initial js
       if (!deviceAgent.match(/(iphone|ipod|ipad|mac)/gi)) {
 
         var m1Con4BG = $('#m1-con-4 .bgImg-wrap');
@@ -1782,7 +1765,6 @@
       $(window).scroll(function () {
         currentWindowScrollTop = $(window).scrollTop();
         if (currentWindowScrollTop < (m1Sec2OffsetTop / 10 * 4)) {
-          // TODO重置會有點delay
           m1Sec2Counter = 0;
           m1Con2AnimeInitial(m1Con2ObjArray);
         } else if (currentWindowScrollTop > (m1Sec2OffsetTop / 10 * 4) && currentWindowScrollTop < (m1Sec2OffsetTop - 150)) {
@@ -1836,6 +1818,7 @@
         });
         loader.pause();
         m1Con1Anime(vibrationM1);
+        $("#copyright").text(thisYear);
         next();
       });
     });
