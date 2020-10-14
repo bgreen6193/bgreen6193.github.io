@@ -1596,279 +1596,256 @@
     }
 
     function ready() {
-    return new Promise(function (resolve, reject) {
-      $(document).ready(function () {
+      return new Promise(function (resolve, reject) {
+        $(document).ready(function () {
 
-        // global var
-        const thisYear = new Date().getFullYear();
-        var deviceAgent = navigator.userAgent.toLowerCase();
-        var m1Con1ObjArray = [
-          "#bgreen-logo",
-          "#m1-con-1-footer",
-          "#logo-maple",
-          "#m1-con-1-title",
-          "#m1-con-1-subtitle",
-          "#m1",
-        ];
-        var m1Con2ObjArray = [
-          "#m1-con-2 .bg-white-line",
-          "#m1-con-2 .bg-white-logo",
-          "#Rectangle_5",
-        ];
-        var m1Con6ObjArray = [
-          "#m1-con-6-leaf-1",
-          "#m1-con-6-leaf-2",
-          "#m1-con-6-leaf-3",
-          "#m1-con-6-leaf-4",
-          "#Path_211"
-        ];
-        var m1Con7ObjArray = [
-          "#m1-con-7-footer-svg-1",
-          "#m1-con-7-footer-svg-2",
-          "#m1-con-7-footer-content"
-        ];
-        var m1Con8_1ObjArray = [
-          "#m1-con-8-1-motion",
-          "#m1-con-8-1-motionWrap-1",
-          "#m1-con-8-1-motionWrap-2",
-          "#m1-con-8-1-motionWrap-3",
-          "#m1-con-8-1-motionWrap-4",
-        ];
-        var m1Con8_2ObjArray = [
-          "#m1-con-8-2-motion",
-          "#m1-con-8-2-motionWrap-1",
-          "#m1-con-8-2-motionWrap-2",
-          "#m1-con-8-2-motionWrap-3",
-          "#m1-con-8-2-motionWrap-4",
-        ];
+          // global var
+          const thisYear = new Date().getFullYear();
+          var deviceAgent = navigator.userAgent.toLowerCase();
+          var m1Con1ObjArray = [
+            "#bgreen-logo",
+            "#m1-con-1-footer",
+            "#logo-maple",
+            "#m1-con-1-title",
+            "#m1-con-1-subtitle",
+            "#m1",
+          ];
+          var m1Con2ObjArray = [
+            "#m1-con-2 .bg-white-line",
+            "#m1-con-2 .bg-white-logo",
+            "#Rectangle_5",
+          ];
+          var m1Con6ObjArray = [
+            "#m1-con-6-leaf-1",
+            "#m1-con-6-leaf-2",
+            "#m1-con-6-leaf-3",
+            "#m1-con-6-leaf-4",
+            "#Path_211"
+          ];
+          var m1Con7ObjArray = [
+            "#m1-con-7-footer-svg-1",
+            "#m1-con-7-footer-svg-2",
+            "#m1-con-7-footer-content"
+          ];
+          var m1Con8_1ObjArray = [
+            "#m1-con-8-1-motion",
+            "#m1-con-8-1-motionWrap-1",
+            "#m1-con-8-1-motionWrap-2",
+            "#m1-con-8-1-motionWrap-3",
+            "#m1-con-8-1-motionWrap-4",
+          ];
+          var m1Con8_2ObjArray = [
+            "#m1-con-8-2-motion",
+            "#m1-con-8-2-motionWrap-1",
+            "#m1-con-8-2-motionWrap-2",
+            "#m1-con-8-2-motionWrap-3",
+            "#m1-con-8-2-motionWrap-4",
+          ];
 
-        var currentWindowScrollTop;
-        var currentWindowHeight = $(window).height();
-        var currentWindowWidth = $(window).width();
+          var currentWindowScrollTop;
+          var currentWindowHeight = $(window).height();
+          var currentWindowWidth = $(window).width();
 
-        var m1Sec2OffsetTop = $("#m1-sec-2").offset().top;
-        var m1Sec2Counter = 0;
-        var m1Sec3OffsetTop = $("#m1-sec-3").offset().top;
-        var m1Sec6OffsetTop = $("#m1-sec-6").offset().top;
-        var m1Sec6Counter = 0;
-        var m1Sec7OffsetTop = $("#m1-sec-7").offset().top;
-        var m1Sec7Counter = 0;
-        var m1Sec8OffsetTop = $("#m1-sec-8").offset().top;
-        var m1Sec8Counter = 0;
-        var m1Sec9OffsetTop = $("#m1-sec-9").offset().top;
+          var m1Sec2OffsetTop = $("#m1-sec-2").offset().top;
+          var m1Sec2Counter = 0;
+          var m1Sec3OffsetTop = $("#m1-sec-3").offset().top;
+          var m1Sec6OffsetTop = $("#m1-sec-6").offset().top;
+          var m1Sec6Counter = 0;
+          var m1Sec7OffsetTop = $("#m1-sec-7").offset().top;
+          var m1Sec7Counter = 0;
+          var m1Sec8OffsetTop = $("#m1-sec-8").offset().top;
+          var m1Sec8Counter = 0;
+          var m1Sec9OffsetTop = $("#m1-sec-9").offset().top;
 
-        var loader = anime({
-          targets: ["#Group_221"],
-          translateY: 10,
-          direction: 'alternate',
-          loop: true,
-          duration: 200,
-          easing: "easeInExpo"
-        });
-
-        var vibrationM1 = anime({
-          targets: "#m1",
-          translateY: [-2, 2],
-          duration: 100,
-          easing: "linear",
-          direction: "alternate",
-          autoplay: false,
-          loop: true,
-        });
-
-
-        var goldenCircleUpAndDown = anime({
-          targets: '#m1-con-11-goldenCircleWrap .goldenCircleUpAndDown',
-          translateY: 10,
-          direction: 'alternate',
-          loop: true,
-          duration: 2000,
-          easing: function (el, i, total) {
-            return function (t) {
-              return Math.pow(Math.sin(t * (i + 1)), total);
-            }
-          }
-        });
-
-        // initial AOS
-        AOS.init();
-
-        // initial lazyload
-        lazyload();
-
-        // initial Swiper
-        var swiper = new Swiper('.swiper-container', {
-          speed: 1500,
-          effect: 'coverflow',
-          grabCursor: true,
-          centeredSlides: true,
-          slidesPerView: 'auto',
-          coverflowEffect: {
-            rotate: 20,
-            stretch: 0,
-            depth: 100,
-            modifier: 1,
-            slideShadows: true,
-          },
-          autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-            waitForTransition: true,
-          },
-        });
-
-
-        // initial css
-        for (let i in m1Con1ObjArray) {
-          $(m1Con1ObjArray[i]).css({
-            "opacity": 0,
+          var loader = anime({
+            targets: ["#Group_221"],
+            translateY: 10,
+            direction: 'alternate',
+            loop: true,
+            duration: 200,
+            easing: "easeInExpo"
           });
-        }
-        m1Con2AnimeInitial(m1Con2ObjArray);
 
-        // initial anime
-        m1Con9SvgTopAnime();
-        m1Con9SvgBottomAnime();
-
-        // initial js
-        if (!deviceAgent.match(/(iphone|ipod|ipad|mac)/gi)) {
-
-          var m1Con4BG = $('#m1-con-4 .bgImg-wrap');
-
-          m1Con4BG.addClass('bga-fixed');
-          if (deviceAgent.match(/(iphone)/gi)) {
-            m1Con4BG.addClass("bgp-iphone");
-          }
-        }
-
-        // listen envent
-
-        // $('#m1-con-1').click(function(){
-        //   $('html, body').animate({
-        //     scrollTop: $("#m1-page-2").offset().top
-        //   }, 1000);
-        // });
-
-        // $('#m1-con-1').bind('mousewheel', function(e){
-        //   return false;
-        // });
-
-        $(".cardRightTurnBtn").click(function () {
-          $("#cardScene .card-front").css({
-            transform: "rotateY(180deg)",
+          var vibrationM1 = anime({
+            targets: "#m1",
+            translateY: [-2, 2],
+            duration: 100,
+            easing: "linear",
+            direction: "alternate",
+            autoplay: false,
+            loop: true,
           });
-          $("#cardScene .card-back").css({
-            transform: "rotateY(0deg)",
-          });
-        });
 
-        $(".cardLeftTurnBtn").click(function () {
-          $("#cardScene .card-front").css({
-            transform: "rotateY(0deg)",
-          });
-          $("#cardScene .card-back").css({
-            transform: "rotateY(-180deg)",
-          });
-        });
 
-        $("#m1-con-11-goldenCircleWrap .goldenCircleUpAndDown").click(function () {
-          if (goldenCircleUpAndDown.paused == true) {
-            goldenCircleUpAndDown.play();
-          } else {
-            goldenCircleUpAndDown.pause();
-          }
-        });
-
-        $(window).scroll(function () {
-          currentWindowScrollTop = $(window).scrollTop();
-          if (currentWindowScrollTop < (m1Sec2OffsetTop / 10 * 4)) {
-            // TODO重置會有點delay
-            m1Sec2Counter = 0;
-            m1Con2AnimeInitial(m1Con2ObjArray);
-          } else if (currentWindowScrollTop > (m1Sec2OffsetTop / 10 * 4) && currentWindowScrollTop < (m1Sec2OffsetTop - 150)) {
-            if (m1Sec2Counter == 0) {
-              m1Sec2Counter += 1;
-              m1Con2Anime();
-            }
-          }
-          // 第六頁動畫尚未製作。
-          // if (currentWindowScrollTop < (m1Sec6OffsetTop - 350) && currentWindowScrollTop > m1Sec6OffsetTop) {
-          //   m1Sec6Counter = 0;
-          //   m1Con6AnimeInitial(m1Con6ObjArray);
-          // } else if (currentWindowScrollTop > (m1Sec6OffsetTop - 350) && currentWindowScrollTop < m1Sec6OffsetTop) {
-          //   if (m1Sec6Counter == 0) {
-          //     m1Sec6Counter += 1;
-          //     m1Con6Anime();
-          //   }
-          // }
-          if (currentWindowScrollTop < (m1Sec7OffsetTop + 350) && currentWindowScrollTop > m1Sec6OffsetTop) {
-            m1Sec7Counter = 0;
-            m1Con7AnimeInitial(m1Con7ObjArray);
-          } else if (currentWindowScrollTop > (m1Sec7OffsetTop + 350) && currentWindowScrollTop < m1Sec8OffsetTop) {
-            if (m1Sec7Counter == 0) {
-              m1Sec7Counter += 1;
-              m1Con7Anime();
-            }
-          }
-          if (currentWindowScrollTop < (m1Sec8OffsetTop - 600) && currentWindowScrollTop > m1Sec7OffsetTop) {
-            m1Sec8Counter = 0;
-            if (currentWindowWidth < 768) {
-              m1Con8_2AnimeInitial(m1Con8_2ObjArray);
-            } else {
-              m1Con8_1AnimeInitial(m1Con8_1ObjArray);
-            }
-          } else if (currentWindowScrollTop > (m1Sec8OffsetTop - 600) && currentWindowScrollTop < m1Sec8OffsetTop) {
-            if (m1Sec8Counter == 0) {
-              if (currentWindowWidth < 768) {
-                m1Con8_2Anime(m1Con8_2ObjArray);
-              } else {
-                m1Con8_1Anime(m1Con8_1ObjArray);
+          var goldenCircleUpAndDown = anime({
+            targets: '#m1-con-11-goldenCircleWrap .goldenCircleUpAndDown',
+            translateY: 10,
+            direction: 'alternate',
+            loop: true,
+            duration: 2000,
+            easing: function (el, i, total) {
+              return function (t) {
+                return Math.pow(Math.sin(t * (i + 1)), total);
               }
-              m1Sec8Counter += 1;
+            }
+          });
+
+          // initial AOS
+          AOS.init();
+
+          // initial Swiper
+          var swiper = new Swiper('.swiper-container', {
+            speed: 1500,
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+              rotate: 20,
+              stretch: 0,
+              depth: 100,
+              modifier: 1,
+              slideShadows: true,
+            },
+            autoplay: {
+              delay: 2500,
+              disableOnInteraction: false,
+              waitForTransition: true,
+            },
+          });
+
+
+          // initial css
+          for (let i in m1Con1ObjArray) {
+            $(m1Con1ObjArray[i]).css({
+              "opacity": 0,
+            });
+          }
+          m1Con2AnimeInitial(m1Con2ObjArray);
+
+          // initial anime
+          m1Con9SvgTopAnime();
+          m1Con9SvgBottomAnime();
+
+          // initial js
+          if (!deviceAgent.match(/(iphone|ipod|ipad|mac)/gi)) {
+
+            var m1Con4BG = $('#m1-con-4 .bgImg-wrap');
+
+            m1Con4BG.addClass('bga-fixed');
+            if (deviceAgent.match(/(iphone)/gi)) {
+              m1Con4BG.addClass("bgp-iphone");
             }
           }
+
+
+          $(".cardRightTurnBtn").click(function () {
+            $("#cardScene .card-front").css({
+              transform: "rotateY(180deg)",
+            });
+            $("#cardScene .card-back").css({
+              transform: "rotateY(0deg)",
+            });
+          });
+
+          $(".cardLeftTurnBtn").click(function () {
+            $("#cardScene .card-front").css({
+              transform: "rotateY(0deg)",
+            });
+            $("#cardScene .card-back").css({
+              transform: "rotateY(-180deg)",
+            });
+          });
+
+          $("#m1-con-11-goldenCircleWrap .goldenCircleUpAndDown").click(function () {
+            if (goldenCircleUpAndDown.paused == true) {
+              goldenCircleUpAndDown.play();
+            } else {
+              goldenCircleUpAndDown.pause();
+            }
+          });
+
+          $(window).scroll(function () {
+            currentWindowScrollTop = $(window).scrollTop();
+            if (currentWindowScrollTop < (m1Sec2OffsetTop / 10 * 4)) {
+              m1Sec2Counter = 0;
+              m1Con2AnimeInitial(m1Con2ObjArray);
+            } else if (currentWindowScrollTop > (m1Sec2OffsetTop / 10 * 4) && currentWindowScrollTop < (m1Sec2OffsetTop - 150)) {
+              if (m1Sec2Counter == 0) {
+                m1Sec2Counter += 1;
+                m1Con2Anime();
+              }
+            }
+
+            if (currentWindowScrollTop < (m1Sec7OffsetTop + 350) && currentWindowScrollTop > m1Sec6OffsetTop) {
+              m1Sec7Counter = 0;
+              m1Con7AnimeInitial(m1Con7ObjArray);
+            } else if (currentWindowScrollTop > (m1Sec7OffsetTop + 350) && currentWindowScrollTop < m1Sec8OffsetTop) {
+              if (m1Sec7Counter == 0) {
+                m1Sec7Counter += 1;
+                m1Con7Anime();
+              }
+            }
+            if (currentWindowScrollTop < (m1Sec8OffsetTop - 600) && currentWindowScrollTop > m1Sec7OffsetTop) {
+              m1Sec8Counter = 0;
+              if (currentWindowWidth < 768) {
+                m1Con8_2AnimeInitial(m1Con8_2ObjArray);
+              } else {
+                m1Con8_1AnimeInitial(m1Con8_1ObjArray);
+              }
+            } else if (currentWindowScrollTop > (m1Sec8OffsetTop - 600) && currentWindowScrollTop < m1Sec8OffsetTop) {
+              if (m1Sec8Counter == 0) {
+                if (currentWindowWidth < 768) {
+                  m1Con8_2Anime(m1Con8_2ObjArray);
+                } else {
+                  m1Con8_1Anime(m1Con8_1ObjArray);
+                }
+                m1Sec8Counter += 1;
+              }
+            }
+          });
+
+          result = {
+            completed: true,
+            loader: loader,
+            m1Con1Anime: m1Con1Anime,
+            vibrationM1: vibrationM1,
+            thisYear: thisYear,
+          }
+
+          resolve(result);
         });
-
-        result = {
-          completed: true,
-          loader: loader,
-          m1Con1Anime: m1Con1Anime,
-          vibrationM1: vibrationM1,
-          thisYear: thisYear,
-        }
-
-        resolve(result);
       });
-    });
-  }
-
-    ready().then(function (result) {
-    if (result.completed === true) {
-      window.onload = function () {
-        $("#loader").queue(function (next) {
-          $(this).css({
-            "left": "-100%",
-            "opacity": 0.1,
-          });
-          $("#Group_221").css({
-            "opacity": 0,
-          });
-          $("body").css({
-            "height": "auto",
-            "overflow": "visible"
-          });
-          $("html").css({
-            "height": "auto",
-            "overflow": "visible"
-          });
-          result.loader.pause();
-          result.m1Con1Anime(result.vibrationM1);
-          $("#copyright").text(result.thisYear);
-          next();
-        });
-      };
     }
-  });
+
+    ready()
+    .then(function (result) {
+      if (result.completed === true) {
+        window.onload = function () {
+          $("#loader").queue(function (next) {
+            $(this).css({
+              "left": "-100%",
+              "opacity": 0.1,
+            });
+            $("#Group_221").css({
+              "opacity": 0,
+            });
+            $("body").css({
+              "height": "auto",
+              "overflow": "visible"
+            });
+            $("html").css({
+              "height": "auto",
+              "overflow": "visible"
+            });
+            result.loader.pause();
+            result.m1Con1Anime(result.vibrationM1);
+            $("#copyright").text(result.thisYear);
+            next();
+          });
+        };
+      }
+    });
 
   </script>
 </body>
