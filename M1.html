@@ -816,7 +816,7 @@
           <div class="col-6 justify-content-center">
             <div id="m1-con-8-1-motionWrap-1">
               <img class="img-fluid photoStyle" src="/assets/images/png/IMG_0216a.png" alt="">
-              <p><strong>全身運動</strong></p>
+              <p><strong>提臀運動</strong></p>
             </div>
           </div>
           <div class="col-6">
@@ -1286,18 +1286,24 @@
       }
       $(target).addClass(animeName);
     }
+
     function remove_utils(target, animeName) {
       if ((typeof (target).toLowerCase() || typeof (animeName).toLowerCase()) != "string") {
         throw console.error("params type must be string.");
       }
       $(target).removeClass(animeName);
     }
+
     function m1Con1Anime(anime1) {
+
       const m1Con1 = anime.timeline({
         loop: false,
       });
+
       const vibrationM1 = anime1;
+
       const m1Con1MaplesArray = ["#m1-con-1-y-maple", "#m1-con-1-l-maple", "#m1-con-1-r-maple"];
+
       m1Con1
         .add({
           targets: m1Con1MaplesArray,
@@ -1318,16 +1324,13 @@
           }
         })
         .add({
-          targets: "#logo-maple",
+          targets: ["#logo-maple", "#m1-con-1-title", "#m1-con-1-subtitle"],
           opacity: [0, 1],
+          delay: function (el, t) {
+            return t * 20;
+          },
           easing: "easeInQuad",
           duration: 1500,
-        })
-        .add({
-          targets: ["#m1-con-1-title", "#m1-con-1-subtitle"],
-          opacity: [0, 1],
-          easing: "easeInQuad",
-          duration: 1500
         })
         .add({
           targets: "#m1",
@@ -1339,7 +1342,7 @@
           }
         })
         .add({
-          targets: m1Con1MaplesArray,
+          targets: [...m1Con1MaplesArray, "#m1-con-1-footer", "#bgreen-logo"],
           opacity: [0, 1],
           duration: 1000,
           easing: "easeInQuad",
@@ -1354,23 +1357,12 @@
               $(m1Con1MaplesArray[i]).addClass("animate__swing");
             }
           },
-        })
-        .add({
-          targets: ["#m1-con-1-footer", "#bgreen-logo",],
-          opacity: [0, 1],
-          easing: "easeInQuad",
-          duration: 1000,
-          begin: function () {
-            for (let i in m1Con1MaplesArray) {
-              $(m1Con1MaplesArray[i]).removeClass("animate__animated animate__swing");
-            }
-          },
           complete: function () {
-            $("#m1").removeClass("animate__animated animate__bounce");
             vibrationM1.play();
           }
         });
     }
+
     function m1Con2AnimeInitial(m1Con2ObjArray) {
       for (let i in m1Con2ObjArray) {
         $(m1Con2ObjArray[i]).css({
@@ -1382,7 +1374,9 @@
         transform: "translateY(50px)",
       });
     }
+
     function m1Con2Anime() {
+
       var _timeline = anime.timeline({
         loop: false,
       });
@@ -1415,30 +1409,17 @@
         translateY: [50, 0],
         duration: 2000,
         easing: "easeInOutQuad",
+        complete: () => {
+          anime({
+            targets: "#leafScene",
+            opacity: 1,
+            duration: 500,
+            easing: "easeInOutQuad",
+          })
+        }
       });
     }
-    function m1Con6AnimeInitial(m1Con6ObjArray) {
-      for (let i in m1Con6ObjArray) {
-        $(m1Con6ObjArray[i]).css({
-          opacity: 0,
-        });
-      }
-    }
-    function m1Con6Anime(m1Con6ObjArray) {
-      var m1Con6 = anime.timeline({
-        loop: true,
-      });
-      m1Con6ObjArray.pop();
-      m1Con6
-        .add({
-          targets: ["#Path_211"],
-          opacity: [0, 1],
-          strokeDashoffset: [anime.setDashoffset, 0],
-          easing: 'easeInQuad',
-          duration: 3000,
-          delay: function (ele, i) { return i * 250; },
-        })
-    }
+
     function m1Con7AnimeInitial(m1Con7ObjArray) {
       for (let i in m1Con7ObjArray) {
         $(m1Con7ObjArray[i]).css({
@@ -1446,6 +1427,7 @@
         });
       }
     }
+
     function m1Con7Anime() {
       var m1Con7 = anime.timeline({
         loop: false,
@@ -1467,6 +1449,7 @@
           }
         });
     }
+
     function m1Con8_1AnimeInitial(m1Con8_1ObjArray) {
       for (let i in m1Con8_1ObjArray) {
         $(m1Con8_1ObjArray[i]).css({
@@ -1474,6 +1457,7 @@
         });
       }
     }
+
     function m1Con8_2AnimeInitial(m1Con8_2ObjArray) {
       for (let i in m1Con8_2ObjArray) {
         $(m1Con8_2ObjArray[i]).css({
@@ -1481,6 +1465,7 @@
         });
       }
     }
+
     function m1Con8_1Anime(m1Con8_1ObjArray) {
       var m1Con8_1 = anime.timeline({
         loop: false,
@@ -1496,6 +1481,7 @@
           }
         })
     }
+
     function m1Con8_2Anime(m1Con8_2ObjArray) {
       var m1Con8_2 = anime.timeline({
         loop: false,
@@ -1512,6 +1498,7 @@
           }
         })
     }
+
     function m1Con9SvgTopAnime() {
       var m1Con9SvgTop = anime.timeline({
         loop: true,
@@ -1570,6 +1557,7 @@
           easing: "easeInOutQuad"
         })
     }
+
     function m1Con9SvgBottomAnime() {
       var m1Con9SvgBottom = anime.timeline({
         loop: true,
@@ -1615,6 +1603,7 @@
           easing: "easeInOutQuad"
         })
     }
+
     $(document).ready(function () {
       // global var
       const thisYear = new Date().getFullYear();
