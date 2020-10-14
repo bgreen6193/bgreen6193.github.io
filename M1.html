@@ -1300,8 +1300,6 @@
         loop: false,
       });
 
-      const vibrationM1 = anime1;
-
       const m1Con1MaplesArray = ["#m1-con-1-y-maple", "#m1-con-1-l-maple", "#m1-con-1-r-maple"];
 
       m1Con1
@@ -1357,8 +1355,9 @@
               $(m1Con1MaplesArray[i]).addClass("animate__swing");
             }
           },
-          complete: function () {
-            vibrationM1.play();
+          complete: function() {
+            $("#m1").removeClass("animate__animated animate__bounce");
+            anime1.play();
           }
         });
     }
