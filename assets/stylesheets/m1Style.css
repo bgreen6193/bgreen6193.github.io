@@ -180,7 +180,6 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   height: 100%;
   overflow: hidden;
   transition: all 1s ease-in;
-  opacity: 0;
 }
 #m1-con-2 #leafScene > .leaves {
   position: absolute;
