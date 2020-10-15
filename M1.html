@@ -1819,7 +1819,7 @@
     }
 
     ready().then(function(result) {
-      $("#loader").queue(function(next) {
+      $("#loader").delay(2000).queue(function(next) {
         $(this).css({
           "left": "-100%",
           "opacity": 0.1,
