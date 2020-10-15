@@ -1717,7 +1717,6 @@
             },
           });
 
-
           // initial css
           for (let i in m1Con1ObjArray) {
             $(m1Con1ObjArray[i]).css({
@@ -1731,16 +1730,10 @@
           m1Con9SvgBottomAnime();
 
           // initial js
-          if (!deviceAgent.match(/(iphone|ipod|ipad|mac)/gi)) {
-
+          if (deviceAgent.match(/(iphone)/gi)) {
             var m1Con4BG = $('#m1-con-4 .bgImg-wrap');
-
-            m1Con4BG.addClass('bga-fixed');
-            if (deviceAgent.match(/(iphone)/gi)) {
-              m1Con4BG.addClass("bgp-iphone");
-            }
+            m1Con4BG.addClass("bgp-iphone");
           }
-
 
           $(".cardRightTurnBtn").click(function () {
             $("#cardScene .card-front").css({
@@ -1816,63 +1809,33 @@
             thisYear: thisYear,
           }
 
-          window.state = false;
           resolve(result);
         });
       });
     }
 
-    ready()
-    .then(function (result) {
-      if (result.completed === true) {
-        if (window.state == false) {
-          window.onload = function () {
-            $("#loader").queue(function (next) {
-              $(this).css({
-                "left": "-100%",
-                "opacity": 0.1,
-              });
-              $("#Group_221").css({
-                "opacity": 0,
-              });
-              $("body").css({
-                "height": "auto",
-                "overflow": "visible"
-              });
-              $("html").css({
-                "height": "auto",
-                "overflow": "visible"
-              });
-              result.loader.pause();
-              result.m1Con1Anime(result.vibrationM1);
-              $("#copyright").text(result.thisYear);
-              window.state = true;
-              next();
-            });
-          }
-        } else {
-          $("#loader").queue(function (next) {
-            $(this).css({
-              "left": "-100%",
-              "opacity": 0.1,
-            });
-            $("#Group_221").css({
-              "opacity": 0,
-            });
-            $("body").css({
-              "height": "auto",
-              "overflow": "visible"
-            });
-            $("html").css({
-              "height": "auto",
-              "overflow": "visible"
-            });
-            result.loader.pause();
-            result.m1Con1Anime(result.vibrationM1);
-            $("#copyright").text(result.thisYear);
-          });
-        }
-      }
+    ready().then(function(result) {
+      $("#loader").queue(function(next) {
+        $(this).css({
+          "left": "-100%",
+          "opacity": 0.1,
+        });
+        $("#Group_221").css({
+          "opacity": 0,
+        });
+        $("body").css({
+          "height": "auto",
+          "overflow": "visible"
+        });
+        $("html").css({
+          "height": "auto",
+          "overflow": "visible"
+        });
+        result.loader.pause();
+        result.m1Con1Anime(result.vibrationM1);
+        $("#copyright").text(result.thisYear);
+        next();
+      });
     });
 
   </script>
